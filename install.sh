@@ -8,8 +8,13 @@ DOTFILES=`dirname $(abspath $0)`
 
 
 # ZSH
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing Oh My Zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
+ln -sf $DOTFILES/zsh/hallambda.zsh-theme $HOME/.oh-my-zsh/custom/themes/hallambda.zsh-theme
 
 
 # Homebrew
