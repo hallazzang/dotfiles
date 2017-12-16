@@ -8,8 +8,8 @@ DOTFILES=`dirname $(abspath $0)`
 
 
 # ZSH
-ln -sf $DOTFILES/zsh/.zshrc $HOME/
-ln -sf $DOTFILES/zsh/.zprofile $HOME/
+ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 
 
 # Homebrew
@@ -21,12 +21,12 @@ brew upgrade
 
 
 # Vim
-ln -sf $DOTFILES/vim/.vimrc $HOME/
+ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc
 
 
 # Tmux
 if ! [ -x "$(command -v reattach-to-user-namespace)" ]; then
     brew install reattach-to-user-namespace
 fi
-ln -sf $DOTFILES/tmux/.tmux.conf $HOME/
+ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
