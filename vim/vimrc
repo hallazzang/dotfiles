@@ -21,6 +21,8 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'djoshea/vim-autoread'
 Plug 'mitsuhiko/vim-jinja'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 syntax on
