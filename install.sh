@@ -17,6 +17,10 @@ ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 ln -sf $DOTFILES/zsh/hallambda.zsh-theme $HOME/.oh-my-zsh/custom/themes/hallambda.zsh-theme
 
 
+# Git
+git config --global alias.ignore '!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi'
+
+
 # Homebrew
 if ! [ -x "$(command -v brew)" ]; then
     echo "Installing Homebrew"
