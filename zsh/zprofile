@@ -1,5 +1,15 @@
 export GOPATH=~/Documents/Develop/Golang
 export PATH=$PATH:$GOPATH/bin
 
+act() {
+    if [ -z "$1" ]; then
+        echo 'error: no virtualenv specified'
+        return
+    fi
+    source "$1/bin/activate"
+}
+
 alias vim='mvim -v'
 alias pwd='pwd -P'
+alias act2='act ~/Develop/.virtualenvs/2'
+alias act3='act ~/Develop/.virtualenvs/3'
