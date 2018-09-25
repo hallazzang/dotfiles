@@ -1,15 +1,27 @@
 export GOPATH=~/Documents/Develop/Golang
 export PATH=$PATH:$GOPATH/bin
+export GPG_TTY=$(tty)
 
 act() {
     if [ -z "$1" ]; then
-        echo 'error: no virtualenv specified'
+        if [ -d "venv" ]; then
+            source "venv/bin/activate"
+        else
+            echo 'error: no virtualenv specified'
+        fi
         return
+    else
+        source "$1/bin/activate"
     fi
-    source "$1/bin/activate"
 }
 
 alias vim='mvim -v'
 alias pwd='pwd -P'
 alias act2='act ~/Develop/.virtualenvs/2'
 alias act3='act ~/Develop/.virtualenvs/3'
+alias tree='tree -C'
+alias cal='pycal -h'
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+setopt ignoreeof
